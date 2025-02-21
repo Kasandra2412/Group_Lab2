@@ -1,18 +1,35 @@
-[gd_scene load_steps=4 format=3 uid="uid://bj24ofi5iqa5p"]
+[gd_scene load_steps=6 format=3 uid="uid://bj24ofi5iqa5p"]
 
-[ext_resource type="Texture2D" uid="uid://dnkm20iqwwlum" path="res://icon.svg" id="1_yajvj"]
 [ext_resource type="Script" path="res://sprite_2d.gd" id="2_lssfl"]
 [ext_resource type="Texture2D" uid="uid://c6iviqb4f1x0o" path="res://Stand.png" id="3_acxy3"]
+[ext_resource type="Texture2D" uid="uid://ctsh5s8v42sd1" path="res://Walk.png" id="3_lk6xp"]
 
-[node name="Sprite2D" type="Sprite2D"]
-position = Vector2(264, 180)
-texture = ExtResource("1_yajvj")
+[sub_resource type="SpriteFrames" id="SpriteFrames_r3kyd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_acxy3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lk6xp")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yrrjv"]
+radius = 37.0
+height = 172.0
+
+[node name="Area2D" type="Area2D"]
+position = Vector2(126, 556)
 script = ExtResource("2_lssfl")
+metadata/_edit_group_ = true
 
-[node name="Stand" type="Sprite2D" parent="."]
-position = Vector2(352, 207)
-texture = ExtResource("3_acxy3")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_r3kyd")
+animation = &"walk"
 
-[node name="Stand2" type="Sprite2D" parent="."]
-position = Vector2(-117, 105)
-texture = ExtResource("3_acxy3")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_yrrjv")

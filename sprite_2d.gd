@@ -1,40 +1,17 @@
-extends Sprite2D
 
-var speed = 500
-var angular_speed = PI
+extends Area2D
 
-#function called when the scene first loads
-func _ready(): 
-	pass
-	#var timer = get_node("Timer")
-	#timer.timeout.connect(_on_timer_timeout)
-#function to make the sprite spin
+#@export allows us to set its value in the Inspector
+@export var speed = 200
+var screen_size 
 
-#func _process(delta):
-	#rotation += angular_speed *delta
-	#var velocity =Vector2.UP.rotated(rotation) * speed
-	#position += velocity*delta
-	
-	#var direction = 0
-	#if Input.is_action_just_pressed("ui_left"):
-		#direction = -1
-	#if Input.is_action_just_pressed("ui_right"):
-		#direction = 1
-	#rotation += angular_speed*direction*delta
-		
-		
-	#2D vector to represent direction and speed 
-		#Vector2.UP is a Vector2 class constant -- a vector pointing up
-		#we then call the function rotate and multiply by speed
-	#var velocity = Vector2.UP.rotated(rotation) * speed
-		#added to move it. the position is of type Vector2
-	#position +=velocity*delta
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	screen_size = get_viewport_rect().size
 
-#function called every fram
 
+# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	#moVing with user input
-	
 	var velocity = Vector2.ZERO #start with velocity at 0
 	if Input.is_action_pressed("ui_up"):
 		velocity = Vector2.UP.rotated(rotation)*speed
@@ -45,15 +22,18 @@ func _process(delta):
 	if Input.is_action_pressed("ui_right"):
 		velocity = Vector2.RIGHT.rotated(rotation)*speed
 	position += velocity*delta
-
-
-#BUTTON 
-
-#func _on_button_pressed():
-	#set_process(not is_processing())
+		
+	if velocity.length()>0: #if user inputs
+		velocity = velocity.normalized()*speed
+		$AnimatedSprite2D.play()
+	else:
+		$AnimatedSprite2D.stop()
+		
+	#clamp() prevents it from leaving the screen size
+	position += velocity*delta
+	position = position.clamp(Vector2.ZERO, screen_size)
 	
-	#to connect a signal via code we need to call the
-	#connect() method. We can do that using Node.-ready()
-
-#func _on_timer_timeout():
-	#visible = not visible
+	if velocity.x !=0:
+		$AnimatedSprite2D.animation = "walk"
+		$AnimatedSprite2D.flip_v = false
+		$AnimatedSprite2D.flip_h = velocity.x < 0
