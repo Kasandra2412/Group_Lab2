@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bj24ofi5iqa5p"]
 
-[ext_resource type="Script" path="res://sprite_2d.gd" id="2_lssfl"]
+[ext_resource type="Script" path="res://area_character.gd" id="1_2c7k2"]
 [ext_resource type="Texture2D" uid="uid://c6iviqb4f1x0o" path="res://Stand.png" id="3_acxy3"]
 [ext_resource type="Texture2D" uid="uid://ctsh5s8v42sd1" path="res://Walk.png" id="3_lk6xp"]
 
@@ -19,17 +19,20 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yrrjv"]
-radius = 37.0
-height = 172.0
+radius = 62.0
+height = 230.0
 
 [node name="Area2D" type="Area2D"]
-position = Vector2(81, 575)
-script = ExtResource("2_lssfl")
+position = Vector2(101, 527)
+script = ExtResource("1_2c7k2")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(17.75, -37.5)
+scale = Vector2(1.39011, 1.46296)
 sprite_frames = SubResource("SpriteFrames_r3kyd")
 animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(15, -29)
 shape = SubResource("CapsuleShape2D_yrrjv")
