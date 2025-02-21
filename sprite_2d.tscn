@@ -5,14 +5,14 @@
 [ext_resource type="Texture2D" uid="uid://c6iviqb4f1x0o" path="res://Stand.png" id="3_acxy3"]
 
 [node name="Sprite2D" type="Sprite2D"]
-position = Vector2(232, 150)
+position = Vector2(264, 180)
 texture = ExtResource("1_yajvj")
 script = ExtResource("2_lssfl")
 
 [node name="Stand" type="Sprite2D" parent="."]
-position = Vector2(793, 39)
+position = Vector2(571, 277)
 texture = ExtResource("3_acxy3")
 
 [node name="Stand2" type="Sprite2D" parent="."]
-position = Vector2(-89, 175)
+position = Vector2(-117, 105)
 texture = ExtResource("3_acxy3")
