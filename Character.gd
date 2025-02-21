@@ -21,7 +21,7 @@ func _process(delta):
 		velocity = Vector2.LEFT.rotated(rotation)*speed
 	if Input.is_action_pressed("ui_right"):
 		velocity = Vector2.RIGHT.rotated(rotation)*speed
-	position += velocity*delta
+	
 		
 	if velocity.length()>0: #if user inputs
 		velocity = velocity.normalized()*speed
