@@ -10,7 +10,7 @@ texture = ExtResource("1_yajvj")
 script = ExtResource("2_lssfl")
 
 [node name="Stand" type="Sprite2D" parent="."]
-position = Vector2(571, 277)
+position = Vector2(352, 207)
 texture = ExtResource("3_acxy3")
 
 [node name="Stand2" type="Sprite2D" parent="."]
