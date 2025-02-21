@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dsrcny7m8r21x"]
 
 [ext_resource type="Texture2D" uid="uid://2bqexj8hxgpg" path="res://IMG_2435.jpg" id="1_aa1g3"]
-[ext_resource type="PackedScene" uid="uid://bj24ofi5iqa5p" path="res://sprite_2d.tscn" id="2_xjaqu"]
+[ext_resource type="PackedScene" uid="uid://bj24ofi5iqa5p" path="res://Character.tscn" id="2_xjaqu"]
 
 [node name="Background" type="Sprite2D"]
 position = Vector2(589, 337)

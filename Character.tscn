@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bj24ofi5iqa5p"]
 
-[ext_resource type="Script" path="res://sprite_2d.gd" id="2_lssfl"]
+[ext_resource type="Script" path="res://Character.gd" id="2_lssfl"]
 [ext_resource type="Texture2D" uid="uid://c6iviqb4f1x0o" path="res://Stand.png" id="3_acxy3"]
 [ext_resource type="Texture2D" uid="uid://ctsh5s8v42sd1" path="res://Walk.png" id="3_lk6xp"]
 
