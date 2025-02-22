@@ -11,7 +11,7 @@ scale = Vector2(0.907004, 0.893617)
 texture = ExtResource("1_aa1g3")
 
 [node name="Area2D" parent="." instance=ExtResource("2_xjaqu")]
-position = Vector2(-399.116, 215.976)
+position = Vector2(-421.167, 193.595)
 
 [node name="Node2D" type="Node2D" parent="Area2D"]
 

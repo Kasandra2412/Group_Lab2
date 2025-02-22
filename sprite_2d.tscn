@@ -24,7 +24,7 @@ radius = 37.0
 height = 172.0
 
 [node name="Area2D" type="Area2D"]
-position = Vector2(126, 556)
+position = Vector2(209, 335)
 script = ExtResource("2_lssfl")
 metadata/_edit_group_ = true
 
