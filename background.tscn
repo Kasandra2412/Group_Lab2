@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dsrcny7m8r21x"]
+[gd_scene load_steps=5 format=3 uid="uid://b4o7eo8x8jtok"]
 
 [ext_resource type="Texture2D" uid="uid://2bqexj8hxgpg" path="res://IMG_2435.jpg" id="1_aa1g3"]
-[ext_resource type="PackedScene" uid="uid://bj24ofi5iqa5p" path="res://Character.tscn" id="2_xjaqu"]
-[ext_resource type="PackedScene" uid="uid://c7xi7pn2donxd" path="res://monster.tscn" id="3_ssbw4"]
+[ext_resource type="PackedScene" path="res://Character.tscn" id="2_xjaqu"]
+[ext_resource type="Texture2D" uid="uid://c5jrd57rc4h8s" path="res://door .webp" id="3_2csao"]
+[ext_resource type="PackedScene" path="res://monster.tscn" id="3_ssbw4"]
 
 [node name="Background" type="Sprite2D"]
 position = Vector2(589, 337)
@@ -10,7 +11,13 @@ scale = Vector2(0.907004, 0.893617)
 texture = ExtResource("1_aa1g3")
 
 [node name="Area2D" parent="." instance=ExtResource("2_xjaqu")]
-position = Vector2(-588.752, 241.714)
+position = Vector2(-399.116, 215.976)
+
+[node name="Node2D" type="Node2D" parent="Area2D"]
+
+[node name="Door" type="Sprite2D" parent="Area2D"]
+position = Vector2(530.318, -67.1426)
+texture = ExtResource("3_2csao")
 
 [node name="Monster" parent="." instance=ExtResource("3_ssbw4")]
 position = Vector2(526.893, 167.737)
