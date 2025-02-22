@@ -21,5 +21,4 @@ scale = Vector2(0.450553, 0.539704)
 
 [node name="Door" type="Sprite2D" parent="."]
 position = Vector2(131.202, 148.833)
-scale = Vector2(1, 1)
 texture = ExtResource("3_2csao")
